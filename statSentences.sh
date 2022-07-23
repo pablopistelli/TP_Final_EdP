@@ -3,28 +3,30 @@
 #-----------------------
 # Longitud de oraciones
 #-----------------------
-
-LARGA=0
-CORTA=0
-PROM=0
-CANT_OR=0
-LONG=0
 FILE=$1
 
+LARGA=0		#Cantidad de caracteres de la oracion mas larga
+CORTA=0		#Cantidad de caracteres de la oracion mas corta
+PROM=0		#Cantidad promedio de caracteres por oracion
+CANT_OR=0	#Cantidad de oraciones
+LONG=0		#Longitud de oracion actual
+
+FIN_OR="[.!?]"	#Regex para detectar fin de oraciones 
+OMIT_OR="\s"	#Regex para omitir caracteres -----> NO PUEDO IDENTIFICAR ESPACIOS EN BLANCO
+
 while read -n1 char; do
-	#Cuento cantidad de caracteres hasta encontrar un punto
-	if [ "$char" != "." ]; then
-		LONG=$(($LONG+1))
+	#Cuento cantidad de caracteres hasta encontrar un final de oracion
+	if [[ ! $char =~ $FIN_OR ]]; then
+		LONG=$(($LONG+1)) && echo "$LONG $char"  #Cuento la cantidad de caracteres
 	else
 		#Si es la primera oracion que leo la guardo como la más corta y la más larga
 		if [ $CANT_OR == 0 ]; then
-			echo "CANT_OR CERO"
 			CORTA=$LONG
 			LARGA=$LONG
 		else
 		#Si no es la primera oracion comparo con las longitudes guardadas y reemplazo
-			[ $LONG -lt $CORTA ] && CORTA=$LONG && (echo "CORTA")
-			[ $LONG -gt $LARGA ] && LARGA=$LONG && (echo "LARGA")
+			[ $LONG -lt $CORTA ] && CORTA=$LONG
+			[ $LONG -gt $LARGA ] && LARGA=$LONG
 		fi
 
 	ACUM=$(($ACUM+$LONG))   #Acumulo total de caracteres
@@ -35,10 +37,10 @@ done <$FILE
 
 PROM=$(($ACUM/$CANT_OR))
 
-echo "ACUM $ACUM"
 echo "Oracion mas larga: $LARGA caracteres"
 echo "Oracion mas corta: $CORTA caracteres"
 echo "Longitud promedio: $PROM caracteres"
+echo "Cantidad de oraciones: $CANT_OR"
 
 exit 0
 
