@@ -6,18 +6,18 @@
 #
 ####################################
 
-ARGUMENTOS=$@
-NOMBRE_PROPIO="^[A-Z]{1}[a-z]+$"
+FILE=$1		
+NOMBRE_PROPIO="^[A-Z]{1}[a-z]+$"	#Regex para formato de nombre propio: Una mayúscula + Al menos una minúscula
 
-[[ $# -eq 0 ]] && echo "No se ingresaron palabras" && exit 1
+echo "Nombres propios encontrados en el archivo:"
 
+while read linea; do
+	for palabra in $linea; do
+	        #Comparo las palabras leidas con la regex para nombres propios y muestro en pantalla las coincidencias
+		if [[ $palabra =~ $NOMBRE_PROPIO ]]; then
+                	echo $palabra
+        	fi
+	done
+done <$FILE
 
-
-for palabra in $ARGUMENTOS
-do
-	if [[ $palabra =~ $NOMBRE_PROPIO ]]
-	then
-		echo $palabra
-	fi
-done
-
+exit 0
