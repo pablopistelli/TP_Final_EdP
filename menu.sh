@@ -49,7 +49,11 @@ case $OPT in
 		;;
 	7)
 		echo "substringReplace.sh"
-		/bin/bash ./substringReplace.sh $FILE
+		echo "Ingrese la cadena que desea buscar: " 
+		read SEARCH
+		echo "Ingrese la cadena por la que desea reemplazar: " 
+		read REPLACE
+		echo "/bin/bash ./substringReplace.sh $FILE $SEARCH $REPLACE"
 		;;
 	8)
 		echo "blockSelection.sh"
