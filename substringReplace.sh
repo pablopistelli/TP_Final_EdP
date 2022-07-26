@@ -15,20 +15,21 @@ SEARCH_RGX=""
 
 
 #Armo regex para incluir las vocales con acentos
+#Para los caracteres con acento utilizo los valores Unicode en HEX
 for (( i=0; i<${#SEARCH}; i++ )); do
 	CHAR=$(echo "${SEARCH:$i:1}")
 	if [[ $CHAR =~ [Aa] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[aAáÁàÀâÂ]"
+		SEARCH_RGX="${SEARCH_RGX}[A\xc3\xa1]"
 	elif [[ $CHAR =~ [Ee] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[eEéÉèÈêÊ]"
+		SEARCH_RGX="${SEARCH_RGX}[E\xc3\xa9]"
 	elif [[ $CHAR =~ [Ii] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[iIíÍìÌîÎ]"
+		SEARCH_RGX="${SEARCH_RGX}[I\xc3\xad]"
 	elif [[ $CHAR =~ [Oo] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[oOóÓòÒôÔ]"
+		SEARCH_RGX="${SEARCH_RGX}[O\xc3\xb3]"
 	elif [[ $CHAR =~ [Uu] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[uUúÚùÙûÛ]"
+		SEARCH_RGX="${SEARCH_RGX}[U\xc3\xba]"
 	else
-		SEARCH_RGX="$SEARCH_RGX[$CHAR${CHAR~~}]"	#Consonantes en mayuscula y minuscula
+		SEARCH_RGX="$SEARCH_RGX[$CHAR]"	#Consonantes
 	fi
 done
 
@@ -38,9 +39,9 @@ done
 # .bak	generar un archivo .bak con el contenido original
 # s/	sustituir
 # /g	global (todas las apariciones)
-# I	case insensitive (esto no es necesario si usamos la regex anterior)	
+# I	case insensitive	
 
-sed -i.bak s/$SEARCH/$REPLACE/gI $FILE
+sed -i.bak s/$SEARCH_RGX/$REPLACE/gI $FILE
 
 echo "Se ha reemplazado la cadena $SEARCH por $REPLACE."
 echo "Se ha generado el archivo $FILE.bak con el contenido original."
