@@ -21,19 +21,21 @@ while read -n1 char; do
 			LONG=$(($LONG+1))
 		fi
 	else
-		#Si es la primera oracion que leo la guardo como la más corta y la más larga
-		if [ $CANT_OR == 0 ]; then
-			CORTA=$LONG
-			LARGA=$LONG
-		else
-		#Si no es la primera oracion comparo con las longitudes guardadas y reemplazo
-			[ $LONG -lt $CORTA ] && CORTA=$LONG
-			[ $LONG -gt $LARGA ] && LARGA=$LONG
-		fi
+		if [ $LONG != 0 ]; then
+			#Si es la primera oracion que leo la guardo como la más corta y la más larga
+			if [ $CANT_OR == 0 ]; then
+				CORTA=$LONG
+				LARGA=$LONG
+			else
+			#Si no es la primera oracion comparo con las longitudes guardadas y reemplazo
+				[ $LONG -lt $CORTA ] && CORTA=$LONG
+				[ $LONG -gt $LARGA ] && LARGA=$LONG
+			fi
 
-	ACUM=$(($ACUM+$LONG))   #Acumulo total de caracteres
-	LONG=0             	#Reinicio longitud de oracion
-	CANT_OR=$(($CANT_OR+1)) #Aumento contador de oraciones
+		ACUM=$(($ACUM+$LONG))   #Acumulo total de caracteres
+		LONG=0             	#Reinicio longitud de oracion
+		CANT_OR=$(($CANT_OR+1)) #Aumento contador de oraciones
+		fi
 	fi
 done <$FILE
 
