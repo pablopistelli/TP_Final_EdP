@@ -33,7 +33,7 @@ if [[ "$BLOCK" =~ [Pp] ]]; then
 	fi
 fi
 
-#[[ "$BLOCK" =~ [Oo] ]] && awk "NR==$SELECT" $FILE
+[[ "$BLOCK" =~ [Oo] ]] && awk -v RS="." "NR==$SELECT" $FILE
 
 
 exit 0
