@@ -1,9 +1,10 @@
-FILE=$1		
-
+#!/bin/bash
+		
 #-------------------------
 # DETECCION DE PALINDROMO
 #-------------------------
 
+FILE=$1
 
 while read linea; do
 	for palabra in $linea; do
@@ -22,3 +23,4 @@ while read linea; do
 done <$FILE
 
 exit 0
+
