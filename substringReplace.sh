@@ -18,16 +18,29 @@ SEARCH_RGX=""
 #Para los caracteres con acento utilizo los valores Unicode en HEX
 for (( i=0; i<${#SEARCH}; i++ )); do
 	CHAR=$(echo "${SEARCH:$i:1}")
-	if [[ $CHAR =~ [Aa] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[A\xc3\xa1]"
-	elif [[ $CHAR =~ [Ee] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[E\xc3\xa9]"
-	elif [[ $CHAR =~ [Ii] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[I\xc3\xad]"
-	elif [[ $CHAR =~ [Oo] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[O\xc3\xb3]"
-	elif [[ $CHAR =~ [Uu] ]]; then
-		SEARCH_RGX="${SEARCH_RGX}[U\xc3\xba]"
+
+	if [[ $CHAR =~ [a] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[a\xc3\xa1]"
+	elif [[ $CHAR =~ [e] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[e\xc3\xa9]"
+	elif [[ $CHAR =~ [i] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[i\xc3\xad]"
+	elif [[ $CHAR =~ [o] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[o\xc3\xb3]"
+	elif [[ $CHAR =~ [u] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[u\xc3\xba]"
+
+	elif [[ $CHAR =~ [A] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[A\xc3\x81]"
+	elif [[ $CHAR =~ [E] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[E\xc3\x89]"
+	elif [[ $CHAR =~ [I] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[I\xc3\x8d]"
+	elif [[ $CHAR =~ [O] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[O\xc3\x93]"
+	elif [[ $CHAR =~ [U] ]]; then
+		SEARCH_RGX="${SEARCH_RGX}[U\xc3\x9a]"
+
 	else
 		SEARCH_RGX="$SEARCH_RGX[$CHAR]"	#Consonantes
 	fi
@@ -41,7 +54,7 @@ done
 # /g	global (todas las apariciones)
 # I	case insensitive	
 
-sed -i.bak s/$SEARCH_RGX/$REPLACE/gI $FILE
+sed -i.bak s/$SEARCH_RGX/$REPLACE/g $FILE
 
 echo "Se ha reemplazado la cadena $SEARCH por $REPLACE."
 echo "Se ha generado el archivo $FILE.bak con el contenido original."
