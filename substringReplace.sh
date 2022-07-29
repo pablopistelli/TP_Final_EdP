@@ -51,8 +51,7 @@ done
 # -i	reemplazar de forma permanente
 # .bak	generar un archivo .bak con el contenido original
 # s/	sustituir
-# /g	global (todas las apariciones)
-# I	case insensitive	
+# /g	global (todas las apariciones)	
 
 sed -i.bak s/$SEARCH_RGX/$REPLACE/g $FILE
 
