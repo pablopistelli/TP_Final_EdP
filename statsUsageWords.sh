@@ -1,32 +1,25 @@
 #!/bin/bash
 
-##############################
-#
+#-----------------------------------------
 # Indicador estadistico de uso de palabras
-#
-#############################
+#-----------------------------------------
 
 FILE=$1
-SOLO_PALABRAS="^[A-Za-z]+$"
-CANT=0
-CACHE=""
+			
+# tr -d '.,?![0-9]' 		--> Elimino caracteres indeseados
+# tr '[:upper:]' '[:lower:]' 	--> Transformo todo a minusculas
+# tr ' ' '\n' 			--> Indico saltos de linea
+# awk 'length > 3' 		--> Filtro palabras de mas de 3 letras.
+# sort 			--> Agrupo palabras iguales
+# uniq -c 			--> Me quedo con una de cada palabra repetida y cuento apariciones
+# sort -r 			--> Agrupo nuevamente en forma descendente
+# head -n 10			--> Indico salida de las 10 palabras con mayor aparicion
 
-while read linea; do
-	for palabra in $linea; do
-		#Analizo sólo las palabras de 4 o más letras
-		if [[ $palabra =~ $SOLO_PALABRAS ]] && [ ${#palabra} -ge 4 ]; then
-			if [[ ! $palabra =~ $CACHE ]]; then
+cat $FILE | tr -d '.,?![0-9]' | tr '[:upper:]' '[:lower:]' | tr ' ' '\n' | awk 'length > 3' | sort | uniq -c | sort -r | head -n 10 > list.txt 
+	
+echo "Listado de palabras (Aparicion|Palabra):"
 
-				CANT=$(grep -o -i $palabra $FILE | wc -l)
-            			echo "$palabra aparece $CANT vez/veces"            
-        			CACHE="$CACHE_$palabra_"
-			fi
-		else
-            		continue
-       	 	fi
-	done
-done <$FILE
-
-echo $CACHE
+cat list.txt
 
 exit 0
+
