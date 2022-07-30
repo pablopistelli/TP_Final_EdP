@@ -10,7 +10,7 @@ FILE=$1
 # tr '[:upper:]' '[:lower:]' 	--> Transformo todo a minusculas
 # tr ' ' '\n' 			--> Indico saltos de linea
 # awk 'length > 3' 		--> Filtro palabras de mas de 3 letras.
-# sort 			--> Agrupo palabras iguales
+# sort 				--> Agrupo palabras iguales
 # uniq -c 			--> Me quedo con una de cada palabra repetida y cuento apariciones
 # sort -r 			--> Agrupo nuevamente en forma descendente
 # head -n 10			--> Indico salida de las 10 palabras con mayor aparicion
