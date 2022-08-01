@@ -1,13 +1,24 @@
 #!/bin/bash
 
-FILE=$1
+FILE=""
 
 echo "TRABAJO PRACTICO FINAL"
 echo "Menu de aplicaciones"
 
+if [[ $FILE =~ "" ]]; then
+	echo "Seleccione el archivo a analizar: "
+        select SEL_FILE in $(ls /home/user/data/)
+        do
+        	[ -e file ] && echo "Opción no válida" && continue
+                echo "Archivo seleccionado: $SEL_FILE" && FILE=$SEL_FILE && break
+	done
+fi
+
 while [ "$OPT" != "0" ]; do
 echo -ne "
 ------------------------
+Archivo seleccionado: $FILE
+
 1. Stats Words
 2. Stats Usage Words
 3. Find Names
@@ -18,6 +29,8 @@ echo -ne "
 8. Block Selection
 9. Palindrome Detection
 0. Exit
+
+F. Seleccionar archivo
 ------------------------
 Ingrese una opción: "
 read -r OPT
@@ -57,12 +70,27 @@ case $OPT in
 		;;
 	8)
 		echo "blockSelection.sh"
-		/bin/bash ./blockSelection.sh $FILE
+		echo "Ingrese el tipo de bloque que desea buscar:"
+		echo "P -> Párrafo"
+		echo "O -> Oraciones"
+		read BLOCK
+		echo "Ingrese el número de bloque que desea buscar:"
+		read BLOCK_NUM
+		/bin/bash ./blockSelection.sh $FILE $BLOCK $BLOCK_NUM
 		;;
 	9)
 		echo "palindromeDetection.sh"
 		/bin/bash ./palindromeDetection.sh $FILE
 		;;
+
+	F)
+		echo "Seleccione el archivo a analizar: "
+		select SEL_FILE in $(ls /home/user/data/)
+		do
+			[ -e file ] && echo "Opción no válida" && continue
+			echo "Archivo seleccionado: $SEL_FILE" && FILE=$SEL_FILE && break
+		done
+		;;	
 	0)
 		echo "Chau"
 		exit 0
