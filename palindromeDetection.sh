@@ -10,7 +10,7 @@ while read linea; do
 	for palabra in $linea; do
 		
 		#Elimino caracteres que me crean problemas
-		ELIM_CAR=$(echo $palabra | tr -d '.,¡¿?!')
+		ELIM_CAR=$(echo $palabra | tr -d '.,?!')
 			
 		if [ ${#ELIM_CAR} -gt 2 ]; then		
 			#Convierto el código de caracteres de cada palabra leída para eliminar acentos
