@@ -62,13 +62,14 @@ _Ingrese una opción:_
 Ingresamos la opción deseada para analizar el texto (números del 1 al 9) o salimos con el 0.  
 Si queremos seleccionar otro archivo de texto para analizar, ingresamos la opción con la letra F.
 
-Siguiendo nuestro caso, seleccionamos, por ejemplo, la opción 3 y a continuación veremos el resultado:
+Siguiendo nuestro caso, seleccionamos, por ejemplo, la opción 3 (Find Names) y a continuación veremos el resultado:
 
 ---    
 _Ingrese una opción: 3_    
 
 _Nombres propios encontrados en el archivo:_  
 _Archivo_  
+_Nombres_  
 _Euge_  
 _Pablo_  
 _Luciano_  
@@ -77,7 +78,11 @@ _Segundo_
 _Una_  
 _Último_  
 
----    
+---  
+
+Luego, aparecerá en pantalla nuevamente el menú principal para elegir la opción que se desee.
+
+
 
 
 
