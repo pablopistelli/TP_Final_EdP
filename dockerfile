@@ -3,6 +3,9 @@ FROM ubuntu
 
 MAINTAINER Lopez_Pistelli
 
+#Defino bash como shell porque por defecto usa sh
+SHELL ["/bin/bash", "-c"]
+
 #Instalo locales para trabajar con textos en español
 RUN apt-get -y install locales
 RUN sed -i '/es_ES.UTF-8/s/^# //g' /etc/locale.gen && \
@@ -10,9 +13,6 @@ RUN sed -i '/es_ES.UTF-8/s/^# //g' /etc/locale.gen && \
 ENV LANG es_ES.UTF-8  
 ENV LANGUAGE es_ES:en  
 ENV LC_ALL es_ES.UTF-8   
-
-#Defino bash como shell porque por defecto usa sh
-SHELL ["/bin/bash", "-c"]
 
 #Creo carpeta de datos
 RUN mkdir /data
