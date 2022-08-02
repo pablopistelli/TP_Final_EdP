@@ -25,7 +25,7 @@ _#?_
 
 ---       
 
-#? --> Aquí indicaremos (según numeración) el texto que querramos analizar.
+#? --> Aquí indicaremos (según numeración) el archivo de texto que querramos analizar.
 
 Haremos de cuenta que queremos analizar __TestFile.txt__. El mismo cuenta con el siguiente texto:
 > Archivo de prueba. Nombres: Euge Pablo Luciano Nico NOnombre.  
