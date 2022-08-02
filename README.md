@@ -36,7 +36,7 @@ Haremos de cuenta que queremos analizar __TestFile.txt__. El mismo cuenta con el
 
 
 Ingresamos el número 2.  
-Luego se nos desplazará el menú principal con las opciones para analizar el texto:  
+A continuación se nos desplazará el menú principal con las opciones para analizar el texto:  
 
 ---    
 _Archivo seleccionado: TestFile.txt_  
