@@ -80,7 +80,7 @@ _Último_
 
 ---  
 
-Luego, aparecerá en pantalla nuevamente el menú principal para elegir la opción que se desee.
+Luego, aparecerá en pantalla nuevamente el menú principal para elegir la opción con la que se desee seguir.
 
 
 
