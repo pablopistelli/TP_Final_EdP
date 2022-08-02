@@ -12,7 +12,7 @@ Para el mismo, se editó un Dockerfile y se construyó una imágen, a partir de 
 4. $ docker build --tag textproc .
 5. $ docker run -it -v $(pwd)/data:/data/ textproc
 
-Para analizar un archivo se debe ubicar en la carpeta **data** y luego seleccionar la opción **F** en el menú principal.
+Para analizar un archivo se debe ubicar en la carpeta **data**.  
 
 A continuación, una vez que ya hemos ejecutado el contenedor, tendremos que seleccionar el archivo que se desee analizar, según la numeración correspondiente.  
 Para nuestro caso, figurará un menú de la siguiente manera:
@@ -27,8 +27,15 @@ _#?_
 
 #? --> Aquí indicaremos (según numeración) el texto que querramos analizar.
 
-Haremos de cuenta que queremos analizar TestFile.txt.  
-Entramos con el número 2.  
+Haremos de cuenta que queremos analizar __TestFile.txt__. El mismo cuenta con el siguiente texto:
+> Archivo de prueba. Nombres: Euge Pablo Luciano Nico NOnombre.  
+> Segundo párrafo. Palíndromos: radar salas.  
+> Una línea en blanco.  
+>   
+> Último párrafo, última oración.
+
+
+Ingresamos el número 2.  
 Luego se nos desplazará el menú principal con las opciones para analizar el texto:  
 
 ---    
@@ -54,5 +61,27 @@ _Ingrese una opción:_
 
 Ingresamos la opción deseada para analizar el texto (números del 1 al 9) o salimos con el 0.  
 Si queremos seleccionar otro archivo de texto para analizar, ingresamos la opción con la letra F.
+
+Siguiendo nuestro caso, seleccionamos, por ejemplo, la opción 3 y a continuación veremos el resultado:
+
+---    
+_Ingrese una opción: 3_    
+
+_Nombres propios encontrados en el archivo:_  
+_Archivo_  
+_Euge_  
+_Pablo_  
+_Luciano_  
+_Nico_  
+_Segundo_  
+_Una_  
+_Último_  
+
+---    
+
+
+
+
+
 
 
