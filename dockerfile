@@ -14,7 +14,7 @@ VOLUME ./data /data
 #Copio los scripts
 ADD ["menu.sh", "statWords.sh", "statsUsageWords.sh", "findNames.sh", "statSentences.sh", "blankLinesCounter.sh", "caseConverter.sh", "substringReplace.sh", "blockSelection.sh", "palindromeDetection.sh", "./"]
 
-ADD ["./data/file.txt", "/data/file.txt"]
+ADD ["./data/TestFile.txt", "/data/TestFile.txt"]
 
 #Ejecuto el menú. Paso como argumento el archivo de texto a analizar.
 ENTRYPOINT ["./menu.sh"]
