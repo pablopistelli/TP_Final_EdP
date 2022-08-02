@@ -9,7 +9,7 @@ if [[ $FILE =~ "" ]]; then
     echo "Seleccione el archivo a analizar: "
         select SEL_FILE in $(ls ./data/)
         do
-            [ -e file ] && echo "Opción no válida" && continue
+            [ -e $SEL_FILE ] && echo "Opción no válida" && continue
                 echo "Archivo seleccionado: $SEL_FILE" && FILE=$SEL_FILE && break
     done
 fi
