@@ -16,12 +16,12 @@ ENV LANGUAGE es_ES.UTF-8
 #Creo carpeta de datos
 RUN mkdir /data
 
-VOLUME ./data /data 
+#VOLUME ./data /data 
 
 #Copio los scripts
 ADD ["menu.sh", "statWords.sh", "statsUsageWords.sh", "findNames.sh", "statSentences.sh", "blankLinesCounter.sh", "caseConverter.sh", "substringReplace.sh", "blockSelection.sh", "palindromeDetection.sh", "./"]
 
-ADD ["./data/TestFile.txt", "/data/TestFile.txt"]
+#ADD ["./data/TestFile.txt", "/data/TestFile.txt"]
 
 #Ejecuto el menú. Paso como argumento el archivo de texto a analizar.
 ENTRYPOINT ["./menu.sh"]
