@@ -14,7 +14,7 @@ Para el mismo, se editó un Dockerfile y se construyó una imágen, a partir de 
 
 Para analizar un archivo se debe ubicar en la carpeta **data** y luego seleccionar la opción **F** en el menú principal.
 
-A continuación, una vez que ya hemos ejecutado el contenedor, tendremos que seleccionar el archivo a analizar, según la numeración correspondiente.  
+A continuación, una vez que ya hemos ejecutado el contenedor, tendremos que seleccionar el archivo que se desee analizar, según la numeración correspondiente.  
 Para nuestro caso, figurará un menú de la siguiente manera:
 
 ---    
@@ -53,6 +53,6 @@ _Ingrese una opción:_
 ---    
 
 Ingresamos la opción deseada para analizar el texto (números del 1 al 9) o salimos con el 0.  
-Si queremos seleccionar otro archivo de texto para analizar, ingreamos la opción con la letra F.
+Si queremos seleccionar otro archivo de texto para analizar, ingresamos la opción con la letra F.
 
 
