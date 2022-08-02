@@ -7,12 +7,11 @@ MAINTAINER Lopez_Pistelli
 SHELL ["/bin/bash", "-c"]
 
 #Instalo locales para trabajar con textos en español
-RUN apt-get -y install locales
-RUN sed -i '/es_ES.UTF-8/s/^# //g' /etc/locale.gen && \
-    locale-gen
-ENV LANG es_ES.UTF-8  
-ENV LANGUAGE es_ES:en  
-ENV LC_ALL es_ES.UTF-8   
+RUN apt-get update
+RUN apt-get install -y locales locales-all
+ENV LC_ALL es_ES.UTF-8
+ENV LANG es_ES.UTF-8
+ENV LANGUAGE es_ES.UTF-8
 
 #Creo carpeta de datos
 RUN mkdir /data
