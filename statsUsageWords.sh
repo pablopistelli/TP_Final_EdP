@@ -17,9 +17,11 @@ FILE=$1
 
 cat $FILE | tr -d '.,?![0-9]' | tr '[:upper:]' '[:lower:]' | tr ' ' '\n' | awk 'length > 3' | sort | uniq -c | sort -g -r | head -n 10 > list.txt 
 	
-echo "Listado de palabras (Aparicion|Palabra):"
+echo "Palabras más usadas en el texto (Aparición|Palabra):"
 
 cat list.txt
+
+rm list.txt
 
 exit 0
 
