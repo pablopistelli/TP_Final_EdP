@@ -83,9 +83,95 @@ _Último_
 
 Luego, aparecerá en pantalla nuevamente el menú principal para elegir la opción con la que se desee continuar.
 
+---
 
+## Descripción de las funciones:
+~~~
+1. Stat Words
 
+Indicador estadístico de longitud de palabras. 
+- Palabra más corta
+- Palabra más larga 
+- Promedio de longitud
+~~~
+~~~
+2. Stats Usage Words
 
+Lista las 10 palabras más usadas. 
+Se consideran palabras de 4 o más carateres.
+~~~
+~~~
+3. Find Names
+
+Lista de nombres propios. 
+Se consideran las palabras del tipo Nnnnnnnnn, aunque no sea un nombre propio realmente.
+~~~
+~~~
+4. Stat Sentences
+
+Indicador estadístico de longitud de oraciones. 
+- Oración más corta
+- Oración más larga 
+- Promedio de longitud
+~~~
+~~~
+5. Blank Lines Counter
+
+Indica cuántas líneas vacías hay en el archivo.
+Una línea con sólo espacios en blanco no se considera línea vacía.
+~~~
+~~~
+6. Case Converter
+
+Invierte mayúsculas y minúsculas en todo el texto.
+Se muestra en pantalla el texto original y luego el texto invertido.
+~~~
+~~~
+7. Substring Replace
+
+Reemplazo de subcadenas.
+Considere diferencias entre minúsculas y mayúsculas. Ignora acentos. 
+Solicita:
+- Cadena a buscar
+- Cadena de reemplazo
+
+Ejemplo:
+Ingrese la cadena que desea buscar: tre
+Ingrese la cadena por la que desea reemplazar: TRE
+
+Las palabras: enTrepiso, entretenido, intrépido
+Pasan a: enTrepiso, enTREtenido, inTREpido
+~~~
+~~~
+8. Block Selection
+
+Selección de oración y/o párrafo en base a un número de entrada. 
+Un párrafo se distingue de otro con un punto y aparte. Las oraciones vía un punto seguido.
+
+Solicita:
+- Tipo de bloque: O para oraciones / P para párrafos
+- Número de bloque
+
+Ejemplo:
+Ingrese el tipo de bloque que desea buscar: P
+Ingrese el número de bloque que desea buscar: 1
+
+Muestra en pantalla el primer párrafo del archivo.
+~~~
+~~~
+9. Palindrome Detection
+
+Lista las palabras palíndromo.
+Ignorar mayúsculas, minúsculas y acentos.
+~~~
+~~~
+0. Exit
+Salir de la aplicación.
+~~~
+~~~
+F. Seleccionar archivo
+Lista los archivos contenidos en el directorio ./data y selecciona archivo a analizar.
+~~~
 
 
 
