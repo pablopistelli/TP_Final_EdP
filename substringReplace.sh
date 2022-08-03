@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#----------------------------------------
-# Reemplazo de cadenas dentro de archivo
-#----------------------------------------
+#--------------------------------------------------------------------------
+# Reemplazo de subcadenas dentro de archivo, considerando diferencias entre 
+# minúsculas y mayúsculas, pero ignorando acentos.
+#--------------------------------------------------------------------------
 
 FILE=$1		#Primer argumento: archivo
 SEARCH=$2	#Segundo argumento: cadena a buscar
