@@ -75,12 +75,13 @@ _Pablo_
 _Luciano_  
 _Nico_  
 _Segundo_  
+_Palíndromos_  
 _Una_  
 _Último_  
 
 ---  
 
-Luego, aparecerá en pantalla nuevamente el menú principal para elegir la opción con la que se desee seguir.
+Luego, aparecerá en pantalla nuevamente el menú principal para elegir la opción con la que se desee continuar.
 
 
 
