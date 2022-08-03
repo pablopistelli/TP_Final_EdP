@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #-----------------------------------
-# Ddetección de palabras palíndromo.
+# Detección de palabras palíndromo.
 #-----------------------------------
 
 FILE=$1
