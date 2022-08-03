@@ -134,6 +134,7 @@ Considere diferencias entre minúsculas y mayúsculas. Ignora acentos.
 Solicita:
 - Cadena a buscar
 - Cadena de reemplazo
+Se genera un backup del archivo utilizado (.bak) y se reemplazan las cadenas en el archivo original.
 
 Ejemplo:
 Ingrese la cadena que desea buscar: tre
