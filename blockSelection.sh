@@ -49,6 +49,7 @@ if [[ "$BLOCK" =~ [Pp] ]]; then
 	# Verifico que el párrafo solicitado exista
 	if [ $SELECT -le $LONG ]; then
 		# Imprimo la línea especificádola con NR
+		echo "Párrafo número $SELECT:"
 		awk -v RS=$FIN_PAR "NR==$SELECT" $FILE
 	else
 		echo "El archivo contiene $LONG párrafos"
@@ -64,6 +65,7 @@ if [[ "$BLOCK" =~ [Oo] ]]; then
         # Verifico que la oración solicitada exista
         if [ $SELECT -le $LONG ]; then
                 # Imprimo la oración especificádola con NR
+		echo "Oración número $SELECT:"
                 awk -v RS=$FIN_OR "NR==$SELECT" $FILE
         else
                 echo "El archivo contiene $LONG oraciones"
