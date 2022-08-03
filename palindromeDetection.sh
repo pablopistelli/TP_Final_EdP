@@ -19,12 +19,17 @@ while read linea; do
 			#Revierto el orden de los caracteres
 	      	 	REVERSE=$(echo $SIN_ACENTOS | rev)
 	        
-	      	  	#Convierto a minusculas y matcheo ambas variables para encontrar el palindromo
+	      	  	#Convierto a minusculas y matcheo ambas variables para encontrar el palindromo. 
 	        	if [[ ${SIN_ACENTOS,,} =~ ${REVERSE,,} ]]; then
-                		echo "$ELIM_CAR es un palindromo"
+                		echo "$ELIM_CAR" >> lista_palindromos.txt 
                 	fi
                 fi
 	done
 done <$FILE
+
+echo "Palindromos encontrados en el texto:"
+cat lista_palindromos.txt
+
+rm lista_palindromos.txt
 
 exit 0
