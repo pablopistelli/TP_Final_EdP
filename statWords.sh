@@ -38,9 +38,9 @@ done <$FILE
 #Calculo promedio de cantidad de caracteres por palabra
 PROMEDIO=$((SUMA/CONT))		
 
-echo "Palabra mas larga: $MAYOR - ${#MAYOR} letras"
+echo "Palabra mas larga del texto: $MAYOR - ${#MAYOR} letras"
 #Determino si la palabra mas corta tiene una letra o más para mostrar el mensaje correcto (letra/letras)
-([ ${#MENOR} -eq 1 ] && echo "Palabra mas corta: $MENOR - ${#MENOR} letra") || echo "Palabra mas corta: $MENOR - ${#MENOR} letras" 
+([ ${#MENOR} -eq 1 ] && echo "Palabra mas corta del texto: $MENOR - ${#MENOR} letra") || echo "Palabra mas corta: $MENOR - ${#MENOR} letras" 
 echo "Promedio de longitud de palabras: $PROMEDIO letras"
 
 exit 0
