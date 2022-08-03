@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#-----------------------
-# Longitud de oraciones
-#-----------------------
+#---------------------------------------------------------------------
+# Longitud de oraciones (más corta, más larga y promedio de longitud).
+#---------------------------------------------------------------------
 FILE=$1
 
 LARGA=0		#Cantidad de caracteres de la oracion mas larga
